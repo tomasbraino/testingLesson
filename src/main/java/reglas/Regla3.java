@@ -1,4 +1,8 @@
-package main.java.com.dstp7.model;
+package reglas;
+
+import com.dstp7.LineaVenta;
+import com.dstp7.ProductoDescuento;
+import com.dstp7.Venta;
 
 import java.util.ArrayList;
 
@@ -10,18 +14,20 @@ public class Regla3 implements IRegla {
         double descuento = 0;
         ArrayList<ProductoDescuento> productos = new ArrayList<>();
         for (LineaVenta Detalle : venta.Detalle()) {
+
             if ("Lacteos".equals(Detalle.Producto.Rubro.Descripcion)
-                    && "Verduras".equals(Detalle.Producto.Rubro.Descripcion)) {
-                boolean existe = false;
+                    || "Verduras".equals(Detalle.Producto.Rubro.Descripcion)) {
+                boolean existe = true;
                 for (ProductoDescuento productoDescuento : productos) {
+
                     if (productoDescuento.Producto.Codigo != Detalle.Producto.Codigo) {
-                        existe = true;
+                        existe = false;
                         productoDescuento.Cantidad += Detalle.Cantidad;
                         break;
                     }
                 }
                 if (existe) {
-                    productos.add(new ProductoDescuento(Detalle.Producto));
+                    productos.add(new ProductoDescuento(Detalle.Producto, Detalle.Cantidad));
                 }
             }
         }

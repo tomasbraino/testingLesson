@@ -1,4 +1,6 @@
-package main.java.com.dstp7.model;
+package com.dstp7;
+
+import reglas.*;
 
 public class Negocio {
     private static final Producto[] _productos = new Producto[7];
@@ -20,11 +22,11 @@ public class Negocio {
 
         _productos[0] = new Producto(1, "1", 50, rubro1);
         _productos[1] = new Producto(2, "2", 30, rubro2);
-        _productos[2] = new Producto(3, "3", 40, rubro2);
+        _productos[2] = new Producto(3, "3", 1200, rubro2);
         _productos[3] = new Producto(4, "4", 60, rubro3);
         _productos[4] = new Producto(5, "5", 80, rubro2);
         _productos[5] = new Producto(6, "6", 15, rubro4);
-        _productos[6] = new Producto(7, "7", 28, rubro1);
+        _productos[6] = new Producto(7, "7", 2500, rubro1);
     }
 
     public static IRegla[] Reglas() {

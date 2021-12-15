@@ -1,4 +1,8 @@
-package main.java.com.dstp7.model;
+package reglas;
+
+import com.dstp7.LineaVenta;
+import com.dstp7.ProductoDescuento;
+import com.dstp7.Venta;
 
 import java.util.ArrayList;
 
@@ -22,7 +26,7 @@ public class Regla4 implements IRegla {
                 }
             }
             if (existe) {
-                productos.add(new ProductoDescuento(Detalle.Producto));
+                productos.add(new ProductoDescuento(Detalle.Producto, Detalle.Cantidad));
             }
         }
         for (ProductoDescuento productoDescuento : productos) {

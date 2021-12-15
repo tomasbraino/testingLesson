@@ -1,4 +1,6 @@
-package main.java.com.dstp7.model;
+package reglas;
+
+import com.dstp7.Venta;
 
 public interface IRegla {
     double RealizarDescuento(Venta venta);

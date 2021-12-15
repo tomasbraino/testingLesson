@@ -1,15 +1,15 @@
-package main.java.com.dstp7.model;
+package com.dstp7;
 
 import java.util.ArrayList;
 
 public class Venta {
 
     private double _descuento;
-    private final ArrayList<LineaVenta> _detalle = new ArrayList<>();
+    private final ArrayList<LineaVenta> detalle = new ArrayList<>();
 
     public void AgregarDetalle(Producto producto, int cantidad) {
         LineaVenta lv = new LineaVenta(producto, cantidad);
-        _detalle.add(lv);
+        detalle.add(lv);
     }
 
     public double Descuento() {
@@ -18,8 +18,8 @@ public class Venta {
     }
 
     public LineaVenta[] Detalle() {
-        LineaVenta[] lineas = new LineaVenta[_detalle.size()];
-        return _detalle.toArray(lineas);
+        LineaVenta[] lineas = new LineaVenta[detalle.size()];
+        return detalle.toArray(lineas);
     }
 
     public void CalcularDescuentos(DiaSemana dia) {

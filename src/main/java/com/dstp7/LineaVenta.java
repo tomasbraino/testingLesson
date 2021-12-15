@@ -1,4 +1,4 @@
-package main.java.com.dstp7.model;
+package com.dstp7;
 
 public class LineaVenta {
     public LineaVenta() {
